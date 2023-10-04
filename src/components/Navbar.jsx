@@ -81,7 +81,7 @@ const Navbar = () => {
                 </a>
 
                 <div className="header-options">
-                    <input className="header-options--input" placeholder="Pesquise alguma coisa" type="text"/>
+                    <input className="header-options--input" placeholder="Busque por um produto" type="text"/>
 
                     <div className="header-options--search">
                         <ion-icon name="search-outline"></ion-icon>
@@ -148,18 +148,13 @@ const Navbar = () => {
 
             <section className="section-categories">
                 <ul className="section-categories--list">
-                    <li className="categories-list">
-                        <a href="/">Home</a>
-                    </li>
-                    <li className="categories-list">Coleções</li>
-                    <li className="categories-list">PSD</li>
-                    <li className="categories-list">PNG</li>
-                    <li className="categories-list">Fotos</li>
-                    <li className="categories-list">Vetores</li>
-                    <li className="categories-list">Texturas</li>
-                    <li className="categories-list">Vídeos</li>
-                    <li className="categories-list">Apresentações</li>
-                    <li className="categories-list">Mockups</li>
+                    <li className="categories-list">Anéis</li>
+                    <li className="categories-list">Braceletes</li>
+                    <li className="categories-list">Brincos</li>
+                    <li className="categories-list">Colar</li>
+                    <li className="categories-list">Conjunto</li>
+                    <li className="categories-list">Pingentes</li>
+                    <li className="categories-list">Pulseiras</li>
                     <li className="categories-list">
                         Mais categorias
                         <ion-icon name="chevron-down-outline" size="small"></ion-icon>

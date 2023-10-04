@@ -73,7 +73,7 @@
 
 .cart-quantity {
     align-items: center;
-    background-color: #F14405;
+    background-color: #735b60;
     border-radius: 50%;
     box-sizing: content-box;
     display: inline-flex;
@@ -197,7 +197,7 @@ ion-icon {
 /* ----------- CATEGORIES ----------- */
 
 .section-categories {
-    background-color: rgba(241, 68, 5, 0.15);
+    background-color: rgba(233, 210, 210, 0.75);
     border-bottom: rgba(51, 51, 51, 0.10) 1px solid;
     border-top: rgba(51, 51, 51, 0.10) 1px solid;
     padding: 0 7.8rem;
