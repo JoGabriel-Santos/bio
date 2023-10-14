@@ -683,7 +683,7 @@ ion-icon {
     width: 100px;
 }
 
-/* ----------- Section-best-sellers ----------- */
+/* ----------- Section Best Sellers ----------- */
 
 .section--best-sellers {
     align-items: center;
@@ -752,4 +752,64 @@ ion-icon {
     color: rgba(51, 51, 51, 0.75);
     font-size: 1.6rem;
     font-weight: 600;
+}
+
+.best-sellers--button {
+    border: rgba(51, 51, 51, 0.8) 1px solid;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 2rem;
+    font-weight: 500;
+    margin-top: 3.8rem;
+    padding: 1.4rem 4.2rem;
+}
+
+/* ----------- Section Category ----------- */
+
+.section--category {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    padding: 0 7.8rem 5.8rem 7.8rem;
+}
+
+.category--categories {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 30px;
+}
+
+.categories-button {
+    cursor: pointer;
+    width: 15rem;
+}
+
+.categories-button img {
+    border: rgba(51, 51, 51, 0.3) 1px solid;
+    display: block;
+    height: auto;
+    object-fit: cover;
+    object-position: center;
+    transition: border-color 0.3s;
+    width: 100%;
+}
+
+.categories-button:hover img {
+    border-color: #F14405;
+}
+
+.categories-name {
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+}
+
+.categories-name h5 {
+    font-size: 1.8rem;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.categories-button:hover .categories-name h5 {
+    color: #F14405;
 }
