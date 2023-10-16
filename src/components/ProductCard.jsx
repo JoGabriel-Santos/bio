@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const Product = () => {
+const ProductCard = () => {
     const [isHovered, setIsHovered] = useState(false);
 
     const handleMouseEnter = () => {
@@ -11,12 +11,17 @@ const Product = () => {
         setIsHovered(false);
     };
 
+    const redirectToProduct = () => {
+        window.location.href = `/detalhes-do-produto`;
+    };
+
     return (
         <React.Fragment>
             <div
-                className={`product ${isHovered ? "hidden" : ""}`}
+                className={`productCard ${isHovered ? "hidden" : ""}`}
                 onMouseEnter={handleMouseEnter}
                 onMouseLeave={handleMouseLeave}
+                onClick={redirectToProduct}
             >
                 <img src={require("../util/images/product_1.webp")} alt=""/>
 
@@ -39,4 +44,4 @@ const Product = () => {
     );
 };
 
-export default Product;
+export default ProductCard;

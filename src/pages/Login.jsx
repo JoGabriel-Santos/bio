@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-// import * as API from "../api";
+import * as API from "../api";
 
 const Login = (props) => {
     const [isLoggingIn, setIsLoggingIn] = useState(true);
@@ -42,14 +42,18 @@ const Login = (props) => {
             return;
         }
 
+        if (errorMessage.emailError === "Email inválido...") {
+            return;
+        }
+
         try {
             if (isLoggingIn) {
-                // const { data } = await API.signin(loginInfo);
-                // localStorage.setItem("UserInfo", JSON.stringify(data.result));
+                const { data } = await API.signin(loginInfo);
+                localStorage.setItem("UserInfo", JSON.stringify(data.result));
 
             } else {
-                // const { data } = await API.signup(loginInfo);
-                // localStorage.setItem("UserInfo", JSON.stringify(data.result));
+                const { data } = await API.signup(loginInfo);
+                localStorage.setItem("UserInfo", JSON.stringify(data.result));
             }
 
             props.closeLogin();

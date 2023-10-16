@@ -1,5 +1,5 @@
 import React from "react";
-import Product from "../components/Product";
+import ProductCard from "./ProductCard";
 
 const ProductList = ({ title, buttonText }) => {
     return (
@@ -14,21 +14,21 @@ const ProductList = ({ title, buttonText }) => {
                 {
                     title === "Mais vendidos" ? (
                         <>
-                            <Product/>
-                            <Product/>
-                            <Product/>
-                            <Product/>
+                            <ProductCard/>
+                            <ProductCard/>
+                            <ProductCard/>
+                            <ProductCard/>
                         </>
                     ) : (
                         <>
-                            <Product/>
-                            <Product/>
-                            <Product/>
-                            <Product/>
-                            <Product/>
-                            <Product/>
-                            <Product/>
-                            <Product/>
+                            <ProductCard/>
+                            <ProductCard/>
+                            <ProductCard/>
+                            <ProductCard/>
+                            <ProductCard/>
+                            <ProductCard/>
+                            <ProductCard/>
+                            <ProductCard/>
                         </>
                     )
                 }
