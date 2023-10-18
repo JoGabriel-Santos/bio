@@ -45,7 +45,7 @@ const Details = () => {
 
                         <div className="product">
                             <div className="product-image">
-                                <img src={require("../util/images/product_1.webp")} alt=""/>
+                                <img src={productData.productPicture} alt=""/>
                             </div>
 
                             <div className="product-info">
