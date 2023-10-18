@@ -1,7 +1,38 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import ProductCard from "./ProductCard";
+import * as API from "../api";
 
 const ProductList = ({ title, buttonText }) => {
+    const [isLoading, setIsLoading] = useState(true);
+    const [products, setProducts] = useState([]);
+
+    const fetchProducts = async () => {
+        try {
+            const productsData = await API.getProducts();
+            setProducts(productsData.data);
+
+        } catch (error) {
+            console.error("Error fetching products:", error.message);
+
+        } finally {
+            setIsLoading(false);
+        }
+    };
+
+    const renderProductCards = () => {
+        if (isLoading) {
+            return <p className="loading-products">Carregando produtos...</p>;
+        }
+
+        return products.map((product, index) => (
+            <ProductCard key={index} productData={product}/>
+        ));
+    };
+
+    useEffect(() => {
+        fetchProducts();
+    }, []);
+
     return (
         <section className="section--product-list">
             <div className="split">
@@ -21,14 +52,9 @@ const ProductList = ({ title, buttonText }) => {
                         </>
                     ) : (
                         <>
-                            <ProductCard/>
-                            <ProductCard/>
-                            <ProductCard/>
-                            <ProductCard/>
-                            <ProductCard/>
-                            <ProductCard/>
-                            <ProductCard/>
-                            <ProductCard/>
+                            {
+                                renderProductCards()
+                            }
                         </>
                     )
                 }

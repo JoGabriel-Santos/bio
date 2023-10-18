@@ -16,7 +16,6 @@ const Product = () => {
     });
     const [errorMessage, setErrorMessage] = useState({
         productName: "",
-        description: "",
     });
 
     const handleProductPictureChange = (event) => {
@@ -68,14 +67,6 @@ const Product = () => {
             setErrorMessage({
                 ...errorMessage,
                 productName: "Defina o nome do produto para continuar...",
-            });
-            return;
-        }
-
-        if (!productInfo.productDescription) {
-            setErrorMessage({
-                ...errorMessage,
-                productDescription: "Insira a descrição do produto...",
             });
             return;
         }
@@ -185,12 +176,6 @@ const Product = () => {
                             rows="3"
                             value={productInfo.productDescription}
                             onChange={(event) => setProductInfo({ ...productInfo, productDescription: event.target.value })}
-                            onFocus={() =>
-                                setErrorMessage({
-                                    ...errorMessage,
-                                    productDescription: "",
-                                })
-                            }
                             style={{ resize: "none" }}
                         />
                     </div>

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const ProductCard = () => {
+const ProductCard = ({ productData }) => {
     const [isHovered, setIsHovered] = useState(false);
 
     const handleMouseEnter = () => {
@@ -12,8 +12,20 @@ const ProductCard = () => {
     };
 
     const redirectToProduct = () => {
-        window.location.href = `/detalhes-do-produto`;
+        window.location.href = `/detalhes-do-produto/${productData._id}`;
     };
+
+    const paymentInstallments = (price, numInstallments) => {
+        const amount = parseFloat(price.replace(",", "."));
+        const installmentValue = amount / numInstallments;
+        const formattedInstallmentValue = installmentValue.toFixed(2).replace(".", ",");
+
+        return `${numInstallments}x de R$ ${formattedInstallmentValue} sem juros`;
+    }
+
+    if (!productData) {
+        return null;
+    }
 
     return (
         <React.Fragment>
@@ -23,18 +35,18 @@ const ProductCard = () => {
                 onMouseLeave={handleMouseLeave}
                 onClick={redirectToProduct}
             >
-                <img src={require("../util/images/product_1.webp")} alt=""/>
+                <img src={productData.productPicture} alt=""/>
 
                 <div className="product-card--info">
-                    <h2 className="info-name">Pingente ouro amarelo e topázio london</h2>
+                    <h2 className="info-name">{productData.productName}</h2>
 
                     {
                         isHovered ? (
                             <div className="buy--button">Comprar</div>
                         ) : (
                             <>
-                                <h6 className="info-price">R$ 890,00</h6>
-                                <p className="info-payment">10x sem juros de R$ 89,00</p>
+                                <h6 className="info-price">R$ {productData.productPrice}</h6>
+                                <p className="info-payment">{paymentInstallments(productData.productPrice, 10)}</p>
                             </>
                         )
                     }
