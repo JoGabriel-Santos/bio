@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import ProductList from "../components/ProductList";
+import formatPrice from "../helpers/formatPrice";
+import paymentInstallments from "../helpers/paymentInstallments";
 import * as API from "../api";
 
 const Details = () => {
@@ -21,14 +23,6 @@ const Details = () => {
             setIsLoading(false);
         }
     };
-
-    const paymentInstallments = (price, numInstallments) => {
-        const amount = parseFloat(price.replace(",", "."));
-        const installmentValue = amount / numInstallments;
-        const formattedInstallmentValue = installmentValue.toFixed(2).replace(".", ",");
-
-        return `${numInstallments}x de R$ ${formattedInstallmentValue} sem juros`;
-    }
 
     useEffect(() => {
         fetchProduct();
@@ -55,7 +49,7 @@ const Details = () => {
                                 </div>
 
                                 <div className="info--payment">
-                                    <h4 className="payment-price">R$ {productData.productPrice}</h4>
+                                    <h4 className="payment-price">R$ {formatPrice(productData.productPrice)}</h4>
                                     <h6 className="payment-installments">{paymentInstallments(productData.productPrice, 10)}</h6>
                                 </div>
 
@@ -79,11 +73,11 @@ const Details = () => {
                                 </div>
                             </div>
                         </div>
-
-                        <ProductList title="Produtos relacionados" buttonText="Mostrar mais"/>
                     </>
                 )}
             </section>
+
+            <ProductList title="Produtos relacionados" buttonText="Mostrar mais"/>
         </React.Fragment>
     );
 };

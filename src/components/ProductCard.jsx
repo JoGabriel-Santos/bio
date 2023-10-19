@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import formatPrice from "../helpers/formatPrice";
+import paymentInstallments from "../helpers/paymentInstallments";
 
 const ProductCard = ({ productData }) => {
     const [isHovered, setIsHovered] = useState(false);
@@ -14,14 +16,6 @@ const ProductCard = ({ productData }) => {
     const redirectToProduct = () => {
         window.location.href = `/detalhes-do-produto/${productData._id}`;
     };
-
-    const paymentInstallments = (price, numInstallments) => {
-        const amount = parseFloat(price.replace(",", "."));
-        const installmentValue = amount / numInstallments;
-        const formattedInstallmentValue = installmentValue.toFixed(2).replace(".", ",");
-
-        return `${numInstallments}x de R$ ${formattedInstallmentValue} sem juros`;
-    }
 
     if (!productData) {
         return null;
@@ -45,7 +39,7 @@ const ProductCard = ({ productData }) => {
                             <div className="buy--button">Comprar</div>
                         ) : (
                             <>
-                                <h6 className="info-price">R$ {productData.productPrice}</h6>
+                                <h6 className="info-price">R$ {formatPrice(productData.productPrice)}</h6>
                                 <p className="info-payment">{paymentInstallments(productData.productPrice, 10)}</p>
                             </>
                         )

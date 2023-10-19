@@ -478,7 +478,6 @@ ion-icon {
     cursor: pointer;
     height: 445px;
     overflow: hidden;
-    position: relative;
     margin: 0 auto;
     max-width: 300px;
     transition: all 0.3s ease-in-out;
@@ -486,7 +485,7 @@ ion-icon {
 
 .productCard img {
     display: block;
-    height: auto;
+    height: 298px;
     object-fit: cover;
     object-position: center;
     width: 100%;
