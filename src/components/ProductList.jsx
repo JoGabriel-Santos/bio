@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import ProductCard from "./ProductCard";
 import * as API from "../api";
 
-const ProductList = ({ title, buttonText }) => {
+const ProductList = ({ title }) => {
     const [isLoading, setIsLoading] = useState(true);
     const [products, setProducts] = useState([]);
 
@@ -43,24 +43,11 @@ const ProductList = ({ title, buttonText }) => {
 
             <div className="product-list--products">
                 {
-                    title === "Mais vendidos" ? (
-                        <>
-                            <ProductCard/>
-                            <ProductCard/>
-                            <ProductCard/>
-                            <ProductCard/>
-                        </>
-                    ) : (
-                        <>
-                            {
-                                renderProductCards()
-                            }
-                        </>
-                    )
+                    renderProductCards()
                 }
             </div>
 
-            <div className="see-more--button">{buttonText}</div>
+            <div className="see-more--button">Mostrar mais</div>
         </section>
     );
 };

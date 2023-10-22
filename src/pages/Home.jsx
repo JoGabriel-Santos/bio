@@ -21,11 +21,9 @@ const Home = () => {
                 </p>
             </div>
 
-            <ProductList title="Mais vendidos" buttonText="Ver coleção completa"/>
-
             <CategoryList/>
 
-            <ProductList title="Lançamentos" buttonText="Mostrar mais"/>
+            <ProductList title="Lançamentos"/>
         </React.Fragment>
     );
 };

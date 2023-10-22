@@ -77,7 +77,7 @@ const Details = () => {
                 )}
             </section>
 
-            <ProductList title="Produtos relacionados" buttonText="Mostrar mais"/>
+            <ProductList title="Produtos relacionados"/>
         </React.Fragment>
     );
 };
