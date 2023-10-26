@@ -960,7 +960,7 @@ ion-icon {
     display: flex;
     font-size: 1.4rem;
     font-weight: 500;
-    height: 40px;
+    height: 5.4rem;
     justify-content: center;
     transition: all 0.3s;
     user-select: none;
@@ -974,7 +974,7 @@ ion-icon {
 .account--save-button {
     font-size: 1.8rem;
     font-weight: 400;
-    height: 50px;
+    height: 5.4rem;
     margin-top: 4rem;
     transition: .4s ease;
 }
