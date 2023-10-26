@@ -164,6 +164,16 @@
     .product-image img {
         width: 40rem !important;
     }
+
+    .content--authentication {
+        width: 40rem !important;
+    }
 }
 
-/* Below 424px (Phones) */
+/* Below 400px (Phones) */
+
+@media (max-width: 400px) {
+    .content--authentication {
+        width: 30rem !important;
+    }
+}
