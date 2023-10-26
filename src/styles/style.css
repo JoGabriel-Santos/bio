@@ -10,7 +10,7 @@
 }
 
 .logo {
-    width: 11rem;
+    width: 12.5rem;
 }
 
 .header-options {
@@ -229,7 +229,7 @@ ion-icon {
     background-color: rgba(0, 0, 0, 0.5);
     border-radius: 10px;
     left: 50%;
-    padding: 2rem;
+    padding: 5rem;
     position: fixed;
     top: 50%;
     transform: translate(-50%, -50%);
